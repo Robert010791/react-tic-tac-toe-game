@@ -9,8 +9,8 @@
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
-  border: solid red;
+  height: 100vh;
+  /* border: solid red; */
   background-color: black;
 }
 
@@ -59,4 +59,8 @@ button {
   border: solid red;
   background-color: black;
   color: aqua;
+}
+
+button:focus {
+  outline: none;
 }
