@@ -1,7 +1,9 @@
 import React from 'react';
 import './App.css';
 import { useState, useEffect } from 'react';
-import checkForWinner from './winner';
+import board from './gameBoard';
+import Square from './Square';
+// import checkForWinner from './winner';
 
 const App = () => {
   const [topLeft, setTopLeft] = useState('');
@@ -15,8 +17,11 @@ const App = () => {
   const [bottomRight, setBottomRight] = useState('');
   const [playerTurn, setPlayerTurn] = useState('X');
 
+  const [gameBoard, setGameBoard] = useState(board);
+
   useEffect(() => {
     if (topLeft === 'X' && topCenter === 'X' && topRight === 'X') {
+      console.log('win');
     } else if (
       middleLeft === 'X' &&
       middleCenter === 'X' &&
@@ -39,6 +44,10 @@ const App = () => {
   return (
     <div>
       <div className="game-container">
+        {/* {board.map((item, index) => {
+          return <Square item={item} />;
+        })} */}
+
         <div className="game-board-row">
           <span>
             <button
@@ -116,44 +125,6 @@ const App = () => {
             </button>
           </span>
         </div>
-
-        {/* <table>
-          <tbody>
-            <tr>
-              <td>
-                <button>{topRight}</button>
-              </td>
-              <td>
-                <button>{topRight}</button>
-              </td>
-              <td>
-                <button>{topRight}</button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button>{topRight}</button>
-              </td>
-              <td>
-                <button>{topRight}</button>
-              </td>
-              <td>
-                <button>{topRight}</button>
-              </td>
-            </tr>
-            <tr>
-              <td>
-                <button>{topRight}</button>
-              </td>
-              <td>
-                <button>{topRight}</button>
-              </td>
-              <td>
-                <button>{topRight}</button>
-              </td>
-            </tr>
-          </tbody>
-        </table> */}
       </div>
     </div>
   );
