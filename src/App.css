@@ -37,6 +37,10 @@ body {
   border: solid maroon 1px;
 }
 
+button {
+  font-size: 90px;
+}
+
 button:active {
   background-color: blueviolet;
 }
